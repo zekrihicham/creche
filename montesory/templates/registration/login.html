@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LOGIN</title> {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/vendor/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/vendor/animate/animate.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/vendor/css-hamburgers/hamburgers.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/vendor/select2/select2.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/css/util.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/assets/css/login.css' %}" />
+<link href="{% static 'dashboard/assets/css/creative.min.css' %}" rel="stylesheet">
+
+    <body class="text-center">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container"> <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="icon-logo"></i>KONGOROO</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="{% url "first_page" %}">Accueil</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<header class="masthead" style="background-image:url({% static 'images/back.png' %});">
+
+
+        
+        <br> {% block title %}<span class="login100-form-title p-t-100 p-b-45">
+						LOGIN
+					</span>{% endblock %} {% block content %}
+        
+        <div id="content-container" class="container p-none">
+            <div class="container col-lg-8">
+                <form id="login-form" method="post" action="{% url 'login' %}"> {% csrf_token %}
+                    <table class="table">
+                        <tr>
+                            <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required">
+                                <input class="input100" type="text" name="username" placeholder="Username"> <span class="focus-input100"></span> <span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span> </div>
+                        </tr>
+                        <br>
+                        <tr>
+                            <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
+                                <input class="input100" type="password" name="password" placeholder="Password"> <span class="focus-input100"></span> <span class="symbol-input100">
+							<i class="fa fa-lock"></i>
+						</span> </div>
+                        </tr>
+                    </table>
+                    <div class="container-login100-form-btn p-t-10">
+                        <input type="submit" value="Login" class="login100-form-btn"></input>
+                    </div> {% if form.errors %}
+                    <br>
+                    <br>
+                    <p class=" label text-warning"> erreur dans mot de pass ou nom d'utilisateur Reessayer </p> {% endif %}
+                    <input type="hidden" name="next" value="{{ next }}" /> </form>
+            </div>
+        </div> {% endblock content %}
+</header>
+        <!--===============================================================================================-->
+        <script src="{% static 'dashboard/assets/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'dashboard/assets/vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'dashboard/assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'dashboard/assets/vendor/select2/select2.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'dashboard/assets/js/login.js' %}"></script>
+    </body>
+
+</html>

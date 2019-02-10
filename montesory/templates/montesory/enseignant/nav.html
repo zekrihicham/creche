@@ -1,0 +1,38 @@
+{% load static %}
+<div class="sidebar" data-color="azure" data-image="{% static 'assets\img/sidebar-3.jpg' %}">
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    PANNEAU
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="{% url 'teacher' id_user %}">
+                        <i class="pe-7s-user"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'consulterEnfant' id_user %}">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Consulter Enfants</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'statTeacher' id_user%}">
+                        <i class="pe-7s-graph"></i>
+                        <p>Statistiques</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'first_page' %}">
+                        <i class="pe-7s-power"></i>
+                        <p>Déconnecter</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+</div>

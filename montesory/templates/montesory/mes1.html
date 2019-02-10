@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% if mes %}
+    {% for foo in mes %}
+        {% if foo.is_visted %}
+             <p> {{ foo.mes }}</p><br>
+            {% else %}
+             <p><a href="{% url "test4" foo.id %}">{{ foo.mes }}</a> </p><br>
+            <P style="color: red">not</P>
+
+         {% endif%}
+
+
+
+    {% endfor %}
+
+{% endif %}
+</body>
+</html>

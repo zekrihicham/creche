@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dashboard</title>
+     {% load static %}
+  <link href="{% static 'montesory/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'montesory/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="{% static 'montesory/vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{% static 'montesory/css/sb-admin.css' %}" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-light" id="page-top">
+
+
+    {% include "montesory/admin/nav.html" %}
+
+    <div class="content-wrapper">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="adminDashboard.php">Tableau De Bord</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Ajouter Module</li>
+          </ol>
+        </nav>
+        <form action="{% url "ajouterModule" %}" method="post">
+            {% csrf_token %}
+             {% load widget_tweaks %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Designation</label>
+            {% render_field form.designation %}
+          </div>
+          <button type="submit" name="ajouterModule_btn" class="btn btn-primary mb-2">Ajouter Module</button>
+        </form>
+        <br>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="adminDashboard.php">Tableau De Bord</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Supprimer Module</li>
+          </ol>
+        </nav>
+
+        <form action="{% url "ajouterModule" %}" method="post">
+            {% csrf_token %}
+             {% load widget_tweaks %}
+          <div class="form-group">
+                        {% render_field form1.module %}
+
+          </div>
+          <button type="submit" name="supprimeModule_btn" class="btn btn-primary mb-2">Supprimer Module</button>
+        </form>
+      </div></div>
+       <!-- Bootstrap core JavaScript-->
+       <!-- Bootstrap core JavaScript-->
+        <script src="{% static 'montesory/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'montesory/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="{% static 'montesory/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="{% static 'montesory/vendor/chart.js/Chart.min.js' %}"></script>
+        <script src="{% static 'montesory/vendor/datatables/jquery.dataTables.js' %}"></script>
+        <script src="{% static 'montesory/vendor/datatables/dataTables.bootstrap4.js' %}"></script>
+      <!-- Custom scripts for all pages-->
+      <!-- Custom scripts for all pages-->
+        <script src="{% static 'montesory/js/sb-admin.min.js' %}"></script>
+        <!-- Custom scripts for this page-->
+        <script src="{% static 'montesory/js/sb-admin-datatables.min.js' %}"></script>
+        <script src="{% static 'montesory/js/sb-admin-charts.min.js' %}"></script>
+</body>
+
+</html>

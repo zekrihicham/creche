@@ -1,0 +1,20 @@
+body {
+    overflow-x: hidden;
+}
+
+inner text-center {
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.yello {
+    color: #fdd835;
+}
+
+.about > p,
+h6,
+h3 {
+    color: #fff;
+}

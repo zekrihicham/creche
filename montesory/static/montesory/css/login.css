@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Play');
+
+body {
+    
+    background-image: url(../img/login.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.form-signin {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input {
+    border-radius: 0;
+}
+
+.form-signin input {
+    background-color: rgba(120, 120, 120, .7);
+}
+
+.form-signin input:focus {
+    background-color: rgba(120, 120, 120, .7);
+    color: aliceblue;
+    border-color: cadetblue;
+}
+
+.form-signin button {
+    border-radius: 0;
+}
+
+h2 > span {
+    color: cadetblue;
+}
+
+.font-weight-normal {
+    color: azure;
+    font-family: sans-serif;
+    font: 'Play';
+}
+
+.text-muted {
+    color: white;
+    font-family: sans-serif;
+    font: 'Play';
+}
+
+.form-signin input::placeholder {
+    color: aliceblue;
+    opacity: .8;
+}
+
+.form-signin:-ms-input-placeholder {
+    color: aliceblue;
+    opacity: .8;
+}
+
+.form-signin::-ms-input-placeholder {
+    color: aliceblue;
+    opacity: .8;
+}

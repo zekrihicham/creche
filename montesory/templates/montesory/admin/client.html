@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dashboard</title>
+    {% load static %}
+  <!-- Bootstrap core CSS-->
+  <link href="{% static 'montesory/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'montesory/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="{% static 'montesory/vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{% static 'montesory/css/sb-admin.css' %}" rel="stylesheet"> </head>
+
+<body class="fixed-nav sticky-footer bg-light" id="page-top">
+{% include "montesory/admin/nav.html" %}
+
+<div class="content-wrapper">
+      <div class="container-fluid">
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+          Information personnel
+      </h5>
+            </div>
+              <div class="card-body">
+                   <table class="table table-striped table-bordered">
+                           <tr><td>NOM :</td><td>{{ enfant.nom }}</td></tr>
+                            <tr><td>PRENOM :</td><td>{{ enfant.prenom }}</td></tr>
+                           <tr><td>DATE DE NIASSENCE :</td><td>{{ enfant.date_de_naissance }}</td></tr>
+                           <tr><td>SEXE :</td><td>{{ enfant.sexe }}</td></tr>
+                           <tr><td>GROUPE :</td><td>{{ enfant.groupe }}</td></tr>
+                       </table>
+                 <div class="form-group">
+                      <a class="btn btn-danger" href="{% url "supp_client" enfant.id %}">Supprimer </a>
+                    <a class="btn btn-primary" href="{% url "modifierEnfant" enfant.id %}">Modifier </a>
+
+
+                  </div>
+
+
+
+              </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Information Parent
+        </button>
+      </h5>
+            </div>
+                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="card-body">
+                  {% if enfant.parent %}
+                  <table class="table table-striped table-bordered">
+                           <tr><td>NOM :</td><td>{{ enfant.parent.user.first_name }}</td></tr>
+                            <tr><td>PRENOM :</td><td>{{ enfant.parent.user.last_name }}</td></tr>
+                           <tr><td>EMAIL :</td><td>{{ enfant.parent.user.email }}</td></tr>
+                           <tr><td>ADRESSE :</td><td>{{ enfant.parent.adr }}</td></tr>
+                           <tr><td>ADRESSE DE TRAVIAL :</td><td>{{ enfant.parent.adr_tr }}</td></tr>
+                           <tr><td>NUMERO TELEPHONE :</td><td>{{ enfant.parent.numero_telephone }}</td></tr>
+                           <tr><td>SEXE :</td><td>{{ enfant.parent.sexe }}</td></tr>
+                             <tr><td>Username :</td><td>{{ enfant.parent.user.username }}</td></tr>
+
+
+                       </table>
+                        <div class="form-group">
+                      <a class="btn btn-danger" href="">Supprimer </a>
+                    <a class="btn btn-primary" href="">Modifier </a>
+
+
+                  </div>
+
+                  {% else %}
+                      <a class="btn btn-primary" href="{% url "ajouterParent" enfant.id %}">Ajouter Parent</a>
+                  {% endif %}
+
+              </div>
+            </div>
+              <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
+          Remarque
+        </button>
+      </h5>
+            </div>
+                   <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordion">
+              <div class="card-body">
+                <p> infooo PARENT</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div></div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="{% static 'montesory/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'montesory/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="{% static 'montesory/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="{% static 'montesory/vendor/chart.js/Chart.min.js' %}"></script>
+        <script src="{% static 'montesory/vendor/datatables/jquery.dataTables.js' %}"></script>
+        <script src="{% static 'montesory/vendor/datatables/dataTables.bootstrap4.js' %}"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="{% static 'montesory/js/sb-admin.min.js' %}"></script>
+        <!-- Custom scripts for this page-->
+        <script src="{% static 'montesory/js/sb-admin-datatables.min.js' %}"></script>
+        <script src="{% static 'montesory/js/sb-admin-charts.min.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+.flip {
+    -webkit-perspective: 800;
+    perspective: 800;
+    position: relative;
+    text-align: center;
+    border-radius: 0px;
+}
+
+.flip .card:hover {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.flip .card {
+    width: 250px;
+    height: 300px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    background-color: #fff;
+    border-radius: 0px;
+    background-color: #FFDA44;
+
+}
+
+.flip .card .face {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+    border-radius: 0px;
+    padding: 0;
+}
+
+.flip .card .front {
+    position: absolute;
+    width: 250px;
+    z-index: 1;
+    padding: 0;
+}
+
+.flip .card .img {
+    position: relative;
+    margin: 0;
+    width: 250px;
+    height: 300px;
+    z-index: 1;
+    border: 2px solid #000;
+    border-radius: 0px;
+}
+
+.flip .card .back {
+    padding-top: 10%;
+    -webkit-transform: rotatey(-180deg);
+    transform: rotatey(-180deg);
+}
+
+.flip .card .back .inner {
+    color: #fdd835;
+}
